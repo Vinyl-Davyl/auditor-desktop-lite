@@ -46,7 +46,6 @@ export async function analyzeFile(filePath: string): Promise<CodeAnalysisResult>
           },
         };
       } catch (error) {
-        // Return a placeholder result with error information
         return {
           filePath,
           metrics: {
@@ -65,7 +64,6 @@ export async function analyzeFile(filePath: string): Promise<CodeAnalysisResult>
         };
       }
     } else {
-      // In main process, we can use fs directly
       content = await fs.promises.readFile(filePath, "utf-8");
     }
 
