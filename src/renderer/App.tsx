@@ -6,12 +6,10 @@ import { RootState } from "../store";
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
 
-// Wrapper component to handle theme
 const AppContent: React.FC = () => {
   const theme = useSelector((state: RootState) => state.ui.theme);
 
   useEffect(() => {
-    // Apply theme from Redux state
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
