@@ -1,4 +1,6 @@
-# Auditor Desktop Lite
+<h1 align="center" >
+Auditor Desktop Lite
+</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=9FEAF9" alt="Electron">
@@ -101,7 +103,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## References
 
 - [Electron](https://www.electronjs.org/)
 - [React](https://reactjs.org/)
