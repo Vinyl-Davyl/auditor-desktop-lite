@@ -1,0 +1,69 @@
+{
+  "name": "code-auditor",
+  "version": "1.0.0",
+  "description": "A modern desktop application for code analysis and quality improvement",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "npm run build && electron .",
+    "dev": "concurrently \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "vite",
+    "dev:electron": "npx tsc -p tsconfig.electron.json && wait-on http://localhost:3001/index.html && electron .",
+    "build": "npm run build:react && npm run build:electron",
+    "build:react": "vite build",
+    "build:electron": "npx tsc -p tsconfig.electron.json",
+    "package": "electron-builder build --mac --win --linux",
+    "test": "jest"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "code-analysis",
+    "desktop-app"
+  ],
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "appId": "com.codeauditor.app",
+    "productName": "Auditor Desktop Lite",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.9",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.18",
+    "@reduxjs/toolkit": "^1.9.5",
+    "electron": "^24.3.1",
+    "electron-is-dev": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5"
+  }
+}
